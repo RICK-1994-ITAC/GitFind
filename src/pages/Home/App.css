@@ -1,0 +1,76 @@
+.App {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    color: #ffff;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo {
+    position: fixed;
+    left: -20%;
+    top: 0;
+    filter: opacity(.5);
+    height: 100%;
+    z-index: -1;
+}
+
+.content-right{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-right: 4rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.header-input {
+   width: 100%;
+}
+
+.infos-content {
+    display: flex;
+    margin: 2rem 0;
+    gap: 2rem;
+    
+}
+
+.infos-content img {
+    height: 6rem;
+    border: 2px solid #040404;
+    border-radius: 50%;
+}
+
+.info-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-perfil h3{
+    color: #999999;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.info-perfil p, span{
+    color: #999999;
+    
+}
+
+.repositories{
+   height: 100%;
+}
+
+.repositories h4{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
