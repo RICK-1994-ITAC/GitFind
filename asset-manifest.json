@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/GitFind/static/css/main.c6c05f94.css",
+    "main.js": "/GitFind/static/js/main.4612acdb.js",
+    "static/media/logo.png": "/GitFind/static/media/logo.492cd893151e46454993.png",
+    "index.html": "/GitFind/index.html",
+    "main.c6c05f94.css.map": "/GitFind/static/css/main.c6c05f94.css.map",
+    "main.4612acdb.js.map": "/GitFind/static/js/main.4612acdb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6c05f94.css",
+    "static/js/main.4612acdb.js"
+  ]
+}
