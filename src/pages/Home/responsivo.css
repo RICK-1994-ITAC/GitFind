@@ -43,6 +43,21 @@
     .repositories {
         text-align: center;
     }
+
+    .itemListDiv {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .itemListDiv h3{
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    .buttonRemove{
+        margin: 1rem 0 0 1rem;
+    }
 }
 
 @media(max-width: 610px){

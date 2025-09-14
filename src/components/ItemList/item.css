@@ -5,6 +5,10 @@
     margin-top: 2rem;
 }
 
+.repoItem h3 span{
+    margin-left: .8rem;
+}
+
 .repoItem p{
     color: #999999;
     font-size: 1rem;

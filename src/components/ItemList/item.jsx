@@ -4,11 +4,8 @@ import "./item.css"
 export default function ItemList(props) {
   return (
     <div className="repoItem">
-        <h3><strong>{props.title}</strong></h3>
-        <p>{props.description}</p>
-
-        <hr/>
-
+      <a href={props.linkRep.html_url}target="_blank" rel="noreferrer" ><h3><strong>{props.title}</strong></h3></a>
+      <p>{props.description}</p>
     </div>
 
   )

@@ -6,33 +6,40 @@ import Button from "../../components/Button/button";
 import ItemList from "../../components/ItemList/item";
 import { useState } from "react";
 import "./responsivo.css"
+import { api } from "../../services/api";
 
 
 function App() {
   const [user,setUser]= useState('');
   const [currentUser,setCurrentUser]= useState(" ");
-  const [userData, setUserData] = useState(null)
+  const [userData, setUserData] = useState(null);
 
   const searchUser = async ()=>{
-    await fetch(`https://api.github.com/users/${user}`)
-    .then((user)=> user.json())
+    await api.get(`${user}`)
     .then((itemJson) => {
-        const {name, avatar_url, bio,login} =itemJson
+        const {name, avatar_url, bio,login} =itemJson.data
         setCurrentUser({name, avatar_url, bio, login})
       }
     )
-    await fetch(`https://api.github.com/users/${user}/repos`)
-    .then(newRepos => newRepos.json() )
+    await api.get(`${user}/repos`)
     .then(
       (repos)=>{
-        setUserData(repos)
+        setUserData(repos.data)        
       }
     )
   }
 
   const firstUser = (e)=>setUser(e.target.value)
 
+  const removeItemList = (e)=>{
+    const idButton = e.target.closest(".itemListDiv").dataset.id
+    const idNumberButton = Number(idButton)
 
+   setUserData(item=>item.filter(item=> item.id !== idNumberButton));
+   console.log(idNumberButton);
+   
+   
+  }
 
   return (
     <div className="App">
@@ -69,9 +76,13 @@ function App() {
 
             <h4>Repositórios</h4>
 
-            {userData!= null? userData.map(rep => 
-              <ItemList title ={rep.name} description ={rep.description} key={rep.id}/>
-            ): ""}  
+            {userData === null ? "": userData.map(rep =>
+              <div key={rep.id} data-id={rep.id}className="itemListDiv">
+                <ItemList title ={rep.name} description ={rep.description} linkRep={rep} onclickProp = {removeItemList} />
+                <button onClick={removeItemList} className="buttonRemove">X</button>
+                {console.log(userData)}
+                <hr/>
+              </div>)}  
             
             
           </div>
